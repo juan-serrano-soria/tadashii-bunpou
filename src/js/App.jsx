@@ -24,12 +24,21 @@ const App = () => {
   };
 
   const onSubmit = async () => {
+    if (text.trim().length === 0) {
+      alert("Input something!");
+      return;
+    }
+
     const data = {
       inputs: text,
     };
     setOldText(text);
-    const result = await query(data);
-    setFixedText(result[0].generated_text);
+    try {
+      const result = await query(data);
+      setFixedText(result[0].generated_text);
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
   };
 
   const query = async (data) => {
