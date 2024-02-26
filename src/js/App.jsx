@@ -24,6 +24,8 @@ const App = () => {
   };
 
   const onSubmit = async () => {
+    setOldText("");
+    setFixedText("");
     if (text.trim().length === 0) {
       alert("Input something!");
       return;
@@ -32,12 +34,13 @@ const App = () => {
     const data = {
       inputs: text,
     };
-    setOldText(text);
+
     try {
       const result = await query(data);
       setFixedText(result[0].generated_text);
+      setOldText(text);
     } catch (error) {
-      alert("Error: " + error.message);
+      alert("Error, try again");
     }
   };
 
@@ -60,7 +63,7 @@ const App = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ mt: 2 }}>
       <Box
         sx={{
           display: "flex",
@@ -87,7 +90,9 @@ const App = () => {
         <Button fullWidth variant="contained" sx={{ mb: 2 }} onClick={onSubmit}>
           Fix
         </Button>
-        <Typography variant="h5">Fixed!</Typography>
+        <Typography variant="h5" gutterBottom>
+          Fixed!
+        </Typography>
         <StringDiff oldValue={oldText} newValue={fixedText} />
         <Grid container justifyContent="flex-end">
           <IconButton aria-label="copy" onClick={handleCopy}>
