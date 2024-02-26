@@ -28,13 +28,13 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@capacitor/android", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.5.1"],\
           ["@capacitor/assets", "npm:3.0.1"],\
-          ["@capacitor/camera", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.7"],\
           ["@capacitor/cli", "npm:5.5.1"],\
           ["@capacitor/core", "npm:5.5.1"],\
           ["@capacitor/ios", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.5.1"],\
           ["@capacitor/splash-screen", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.6"],\
           ["@emotion/react", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:11.11.3"],\
           ["@emotion/styled", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:11.11.0"],\
+          ["@mui/icons-material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
           ["@mui/material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
           ["@trapezedev/configure", "npm:7.0.10"],\
           ["@vitejs/plugin-react", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:4.2.1"],\
@@ -426,28 +426,6 @@ const RAW_RUNTIME_STATE =
           ["sharp", "npm:0.32.5"],\
           ["tslib", "npm:2.6.2"],\
           ["yargs", "npm:17.7.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@capacitor/camera", [\
-      ["npm:5.0.7", {\
-        "packageLocation": "./.yarn/unplugged/@capacitor-camera-virtual-7b6f77f37c/node_modules/@capacitor/camera/",\
-        "packageDependencies": [\
-          ["@capacitor/camera", "npm:5.0.7"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.7", {\
-        "packageLocation": "./.yarn/unplugged/@capacitor-camera-virtual-7b6f77f37c/node_modules/@capacitor/camera/",\
-        "packageDependencies": [\
-          ["@capacitor/camera", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.7"],\
-          ["@capacitor/core", "npm:5.5.1"],\
-          ["@types/capacitor__core", null]\
-        ],\
-        "packagePeers": [\
-          "@capacitor/core",\
-          "@types/capacitor__core"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1238,6 +1216,33 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@mui-core-downloads-tracker-npm-5.15.11-cf9811102f-10c0.zip/node_modules/@mui/core-downloads-tracker/",\
         "packageDependencies": [\
           ["@mui/core-downloads-tracker", "npm:5.15.11"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@mui/icons-material", [\
+      ["npm:5.15.11", {\
+        "packageLocation": "../../.yarn/berry/cache/@mui-icons-material-npm-5.15.11-75f4987732-10c0.zip/node_modules/@mui/icons-material/",\
+        "packageDependencies": [\
+          ["@mui/icons-material", "npm:5.15.11"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11", {\
+        "packageLocation": "./.yarn/__virtual__/@mui-icons-material-virtual-eb1fae161c/3/.yarn/berry/cache/@mui-icons-material-npm-5.15.11-75f4987732-10c0.zip/node_modules/@mui/icons-material/",\
+        "packageDependencies": [\
+          ["@mui/icons-material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
+          ["@babel/runtime", "npm:7.23.9"],\
+          ["@mui/material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
+          ["@types/mui__material", null],\
+          ["@types/react", null],\
+          ["react", "npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@mui/material",\
+          "@types/mui__material",\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2413,13 +2418,13 @@ const RAW_RUNTIME_STATE =
           ["capacitor-app", "workspace:."],\
           ["@capacitor/android", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.5.1"],\
           ["@capacitor/assets", "npm:3.0.1"],\
-          ["@capacitor/camera", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.7"],\
           ["@capacitor/cli", "npm:5.5.1"],\
           ["@capacitor/core", "npm:5.5.1"],\
           ["@capacitor/ios", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.5.1"],\
           ["@capacitor/splash-screen", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.0.6"],\
           ["@emotion/react", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:11.11.3"],\
           ["@emotion/styled", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:11.11.0"],\
+          ["@mui/icons-material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
           ["@mui/material", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:5.15.11"],\
           ["@trapezedev/configure", "npm:7.0.10"],\
           ["@vitejs/plugin-react", "virtual:1993a3afd95b5a05b35b163908f5c50823121159dba53e035aca1048b7a0585cc93a1fd5e05c780b6b4c741ad379c022d0c8aa6eae883ea5b88fa7edab0710b9#npm:4.2.1"],\
