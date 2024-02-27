@@ -18,6 +18,7 @@ const App = () => {
   const [oldText, setOldText] = useState("");
   const [fixedText, setFixedText] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [showFixed, setShowFixed] = useState(false);
 
   const onChangeText = (e) => {
     setText(e.target.value);
@@ -39,8 +40,10 @@ const App = () => {
       const result = await query(data);
       setFixedText(result[0].generated_text);
       setOldText(text);
+      setShowFixed(true);
     } catch (error) {
       alert("Error, try again");
+      setShowFixed(false);
     }
   };
 
@@ -90,15 +93,21 @@ const App = () => {
         <Button fullWidth variant="contained" sx={{ mb: 2 }} onClick={onSubmit}>
           Fix
         </Button>
-        <Typography variant="h5" gutterBottom>
-          Fixed!
-        </Typography>
-        <StringDiff oldValue={oldText} newValue={fixedText} />
-        <Grid container justifyContent="flex-end">
-          <IconButton aria-label="copy" onClick={handleCopy}>
-            <ContentCopyIcon />
-          </IconButton>
-        </Grid>
+        {showFixed ? (
+          <>
+            <Typography variant="h5" gutterBottom>
+              Fixed!
+            </Typography>
+            <StringDiff oldValue={oldText} newValue={fixedText} />
+            <Grid container justifyContent="flex-end">
+              <IconButton aria-label="copy" onClick={handleCopy}>
+                <ContentCopyIcon />
+              </IconButton>
+            </Grid>
+          </>
+        ) : (
+          <></>
+        )}
       </Box>
     </Container>
   );
