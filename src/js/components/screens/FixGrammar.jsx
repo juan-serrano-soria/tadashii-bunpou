@@ -12,6 +12,7 @@ import IconButton from "@mui/material/IconButton";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 import { env } from "/env";
+import BottomNavigator from "js/components/BottomNavigator";
 
 const FixGrammar = () => {
   const [text, setText] = useState("");
@@ -110,6 +111,7 @@ const FixGrammar = () => {
           <></>
         )}
       </Box>
+      <BottomNavigator />
     </Container>
   );
 };
