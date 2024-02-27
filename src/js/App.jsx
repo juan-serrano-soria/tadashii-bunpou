@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import FixGrammar from "./components/screens/FixGrammar";
+import FixGrammar from "js/components/screens/FixGrammar";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
