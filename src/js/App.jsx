@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import FixGrammar from "js/components/screens/FixGrammar";
+import BottomNavigator from "./components/BottomNavigator";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -32,6 +33,7 @@ const App = () => {
     <ThemeProvider theme={selectedTheme}>
       <CssBaseline />
       <RouterProvider router={router} />
+      <BottomNavigator />
     </ThemeProvider>
   );
 };
