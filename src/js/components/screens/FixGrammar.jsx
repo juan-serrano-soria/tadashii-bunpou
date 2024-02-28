@@ -25,7 +25,6 @@ const FixGrammar = ({ changeTheme }) => {
   useEffect(() => {
     if (localStorage.getItem("history") === null) {
       let history = [];
-      console.log(history);
       localStorage.setItem("history", JSON.stringify(history));
     }
   }, []);

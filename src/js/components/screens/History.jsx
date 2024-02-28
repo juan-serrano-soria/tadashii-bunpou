@@ -19,7 +19,6 @@ const History = ({ changeTheme }) => {
   useEffect(() => {
     if (localStorage.getItem("history") === null) {
       let history = [];
-      console.log(history);
       localStorage.setItem("history", JSON.stringify(history));
     }
     setHistory(JSON.parse(localStorage.getItem("history")));
@@ -28,7 +27,7 @@ const History = ({ changeTheme }) => {
   const onDeleteHistory = () => {
     localStorage.clear();
     setHistory([]);
-  }
+  };
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
@@ -87,14 +86,18 @@ const History = ({ changeTheme }) => {
               </Grid>
             ))}
           </Container>
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{ mb: 2 }}
-            onClick={onDeleteHistory}
-          >
-            Delete History
-          </Button>
+          { history.length === 0 ?
+            <></>
+            :
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{ mb: 2 }}
+              onClick={onDeleteHistory}
+            >
+              Delete History
+            </Button>
+          }
         </Box>
       </Container>
       <BottomNavigator />
