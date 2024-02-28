@@ -68,7 +68,7 @@ const FixGrammar = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ mt: 2 }}>
+    <Container maxWidth="md" sx={{ mt: 4, mb: 8 }}>
       <Box
         sx={{
           display: "flex",
