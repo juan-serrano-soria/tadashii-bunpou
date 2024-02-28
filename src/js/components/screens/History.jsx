@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -13,59 +13,18 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import BottomNavigator from "js/components/BottomNavigator";
 import Bar from "js/components/Bar";
 
-const EXAMPLE = [
-  {
-    text: "Abcd",
-    fixedText:
-      "ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-  {
-    text: "Abcd",
-    fixedText: "ABCDE",
-  },
-];
-
 const History = ({ changeTheme }) => {
+  const [history, setHistory] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("history") === null) {
+      let history = [];
+      console.log(history);
+      localStorage.setItem("history", JSON.stringify(history));
+    }
+    setHistory(JSON.parse(localStorage.getItem("history")));
+  }, []);
+
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleCopy = (text) => {
@@ -94,7 +53,7 @@ const History = ({ changeTheme }) => {
             Correction History
           </Typography>
           <Container>
-            {EXAMPLE.map((correction, index) => (
+            {history.map((correction, index) => (
               <Grid item key={index}>
                 <Card
                   sx={{

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StringDiff } from "react-string-diff";
 
 import Container from "@mui/material/Container";
@@ -22,6 +22,14 @@ const FixGrammar = ({ changeTheme }) => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [showFixed, setShowFixed] = useState(false);
 
+  useEffect(() => {
+    if (localStorage.getItem("history") === null) {
+      let history = [];
+      console.log(history);
+      localStorage.setItem("history", JSON.stringify(history));
+    }
+  }, []);
+
   const onChangeText = (e) => {
     setText(e.target.value);
   };
@@ -44,6 +52,11 @@ const FixGrammar = ({ changeTheme }) => {
       setFixedText(result[0].generated_text);
       setOldText(text);
       setShowFixed(true);
+
+      // update localStorage
+      const history = JSON.parse(localStorage.getItem("history"));
+      history.push({ text: text, fixedText: result[0].generated_text });
+      localStorage.setItem("history", JSON.stringify(history));
     } catch (error) {
       alert("Error, try again");
       setShowFixed(false);
