@@ -1,15 +1,10 @@
 import { useState } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import FixGrammar from "js/components/screens/FixGrammar";
 import History from "js/components/screens/History";
-import BottomNavigator from "./components/BottomNavigator";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -30,18 +25,17 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <FixGrammar />,
+      element: <FixGrammar changeTheme={changeTheme} />,
     },
     {
       path: "/history",
-      element: <History />,
+      element: <History changeTheme={changeTheme} />,
     },
   ]);
 
   return (
     <ThemeProvider theme={selectedTheme}>
       <CssBaseline />
-      <BrowserRouter></BrowserRouter>
       <RouterProvider router={router} />
     </ThemeProvider>
   );

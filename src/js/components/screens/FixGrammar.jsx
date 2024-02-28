@@ -13,8 +13,9 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 import { env } from "/env";
 import BottomNavigator from "js/components/BottomNavigator";
+import Bar from "js/components/Bar";
 
-const FixGrammar = () => {
+const FixGrammar = ({ changeTheme }) => {
   const [text, setText] = useState("");
   const [oldText, setOldText] = useState("");
   const [fixedText, setFixedText] = useState("");
@@ -68,51 +69,61 @@ const FixGrammar = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4, mb: 8 }}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Snackbar
-          open={openSnackbar}
-          onClose={() => setOpenSnackbar(false)}
-          autoHideDuration={2000}
-          message="Copied to clipboard"
-        />
-        <Typography variant="h5">Fix your grammar</Typography>
-        <TextField
-          margin="normal"
-          fullWidth
-          multiline
-          label="Input a sentence"
-          autoFocus
-          value={text}
-          onChange={onChangeText}
-        />
-        <Button fullWidth variant="contained" sx={{ mb: 2 }} onClick={onSubmit}>
-          Fix
-        </Button>
-        {showFixed ? (
-          <>
-            <Typography variant="h5" gutterBottom>
-              Fixed!
-            </Typography>
-            <StringDiff oldValue={oldText} newValue={fixedText} />
-            <Grid container justifyContent="flex-end">
-              <IconButton aria-label="copy" onClick={handleCopy}>
-                <ContentCopyIcon />
-              </IconButton>
-            </Grid>
-          </>
-        ) : (
-          <></>
-        )}
-      </Box>
+    <Box>
+      <Bar changeTheme={changeTheme} />
+      <Container maxWidth="md" sx={{ mt: 10, mb: 8 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Snackbar
+            open={openSnackbar}
+            onClose={() => setOpenSnackbar(false)}
+            autoHideDuration={2000}
+            message="Copied to clipboard"
+          />
+          <Typography variant="h5">Fix your grammar</Typography>
+          <TextField
+            margin="normal"
+            fullWidth
+            multiline
+            label="Input a sentence"
+            autoFocus
+            value={text}
+            onChange={onChangeText}
+          />
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mb: 2 }}
+            onClick={onSubmit}
+          >
+            Fix
+          </Button>
+          {showFixed ? (
+            <>
+              <Typography variant="h5" gutterBottom>
+                Fixed!
+              </Typography>
+              <Container sx={{ wordWrap: "break-word" }}>
+                <StringDiff oldValue={oldText} newValue={fixedText} />
+              </Container>
+              <Grid container justifyContent="flex-end">
+                <IconButton aria-label="copy" onClick={handleCopy}>
+                  <ContentCopyIcon />
+                </IconButton>
+              </Grid>
+            </>
+          ) : (
+            <></>
+          )}
+        </Box>
+      </Container>
       <BottomNavigator />
-    </Container>
+    </Box>
   );
 };
 

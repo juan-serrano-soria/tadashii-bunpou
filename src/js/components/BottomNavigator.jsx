@@ -8,7 +8,13 @@ import Paper from "@mui/material/Paper";
 const BottomNavigator = () => {
   return (
     <Paper
-      sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+      sx={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        pb: `env(safe-area-inset-bottom)`,
+      }}
       elevation={3}
     >
       <BottomNavigation showLabels value={useLocation().pathname}>
