@@ -25,6 +25,11 @@ const History = ({ changeTheme }) => {
     setHistory(JSON.parse(localStorage.getItem("history")));
   }, []);
 
+  const onDeleteHistory = () => {
+    localStorage.clear();
+    setHistory([]);
+  }
+
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleCopy = (text) => {
@@ -82,6 +87,14 @@ const History = ({ changeTheme }) => {
               </Grid>
             ))}
           </Container>
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mb: 2 }}
+            onClick={onDeleteHistory}
+          >
+            Delete History
+          </Button>
         </Box>
       </Container>
       <BottomNavigator />
