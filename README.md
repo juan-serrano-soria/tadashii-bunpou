@@ -7,6 +7,7 @@ App that let's you input a sentence in English and get a correction. It also dis
 - [Capacitor](https://capacitorjs.com/)
 - [React](https://react.dev/)
 - [Material UI for React](https://mui.com/material-ui/getting-started/)
+- [Hugging Face Inference API](https://huggingface.co/docs/api-inference/index)
 - [Hugging Face T5 Base Grammar Correction Model](https://huggingface.co/vennify/t5-base-grammar-correction)
 
 
