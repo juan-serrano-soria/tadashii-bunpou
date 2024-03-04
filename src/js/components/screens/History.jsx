@@ -86,9 +86,9 @@ const History = ({ changeTheme }) => {
               </Grid>
             ))}
           </Container>
-          { history.length === 0 ?
+          {history.length === 0 ? (
             <></>
-            :
+          ) : (
             <Button
               fullWidth
               variant="contained"
@@ -97,7 +97,7 @@ const History = ({ changeTheme }) => {
             >
               Delete History
             </Button>
-          }
+          )}
         </Box>
       </Container>
       <BottomNavigator />
