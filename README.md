@@ -12,7 +12,7 @@ App that let's you input a sentence in English and get a correction. It also dis
 
 
 ## Setup
-You have to setup environment variables for the project to work. Add an `env.js` file inside of `/js` with the following content.
+You have to setup environment variables for the project to work. Edit [env.js](https://github.com/juan-serrano-soria/tadashii-bunpou/blob/main/src/env.js) with the following content.
 ``` javascript
 const env = {
   "HUGGING_FACE_API_TOKEN": "...",
