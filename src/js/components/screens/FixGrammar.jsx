@@ -77,7 +77,26 @@ const FixGrammar = ({ changeTheme }) => {
 
   const handleCopy = () => {
     setOpenSnackbar(true);
-    navigator.clipboard.writeText(fixedText);
+    if (window.self !== window.top) {
+      // We are in an iframe (Monaca Cloud IDE preview)
+      // Use document.execCommand('copy') as a fallback
+      const textarea = document.createElement('textarea');
+      textarea.textContent = fixedText;
+      textarea.style.position = 'fixed';  // Prevent scrolling to bottom of page in MS Edge.
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+          return document.execCommand('copy');  // Security exception may be thrown by some browsers.
+      } catch (ex) {
+          console.warn('Copy to clipboard failed.', ex);
+          return false;
+      } finally {
+          document.body.removeChild(textarea);
+      }
+    } else {
+      // We are not in an iframe
+      navigator.clipboard.writeText(fixedText);
+    }
   };
 
   return (

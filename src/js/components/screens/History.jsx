@@ -33,7 +33,26 @@ const History = ({ changeTheme }) => {
 
   const handleCopy = (text) => {
     setOpenSnackbar(true);
-    navigator.clipboard.writeText(text);
+    if (window.self !== window.top) {
+      // We are in an iframe (Monaca Cloud IDE preview)
+      // Use document.execCommand('copy') as a fallback
+      const textarea = document.createElement('textarea');
+      textarea.textContent = text;
+      textarea.style.position = 'fixed';  // Prevent scrolling to bottom of page in some browsers.
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+          return document.execCommand('copy');  // Security exception may be thrown by some browsers.
+      } catch (ex) {
+          console.warn('Copy to clipboard failed.', ex);
+          return false;
+      } finally {
+          document.body.removeChild(textarea);
+      }
+    } else {
+      // We are not in an iframe
+      navigator.clipboard.writeText(text);
+    }
   };
 
   return (
