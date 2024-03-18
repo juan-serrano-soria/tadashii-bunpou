@@ -41,7 +41,7 @@ And finally you can open the project and run normally in your device / simulator
 `yarn cap open ios` or `yarn cap open android`
 
 ## Blog Post
-You can read more about this project and how it was developed [here](https://cat-bounce.com/). TODO: UPDATE WITH ACTUAL LINK!
+You can read more about this project and how it was developed [here](https://medium.com/the-web-tub/creating-a-grammar-corrector-app-with-monaca-capacitor-and-hugging-face-31cd007a5f48).
 
 ## Demo
 
